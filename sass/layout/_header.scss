@@ -1,0 +1,147 @@
+.banner-home {
+  background-image: $bg-linear, url(../../img/banner1.jpg);
+  @include bg-img(cover, no-repeat, initial);
+  background-attachment: fixed;
+  min-height: 700px;
+  .header {
+    padding: 4rem 0 2rem 0;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__left {
+        .navbar-brand {
+          @include Text(3.6rem, $fw-700, $color-white);
+          text-decoration: none;
+        }
+      }
+      &__right {
+        &--search {
+          position: relative;
+          .search__input {
+            padding: 1rem 5rem 1rem 2rem;
+            @include Text(1.6rem, $fw-400, $font-color);
+            border-radius: 6px;
+            ::-webkit-input-placeholder {
+              color: $color-primary;
+            }
+          }
+          a {
+            text-decoration: none;
+            list-style: none;
+            color: $font-color;
+            .search__icon {
+              font-size: 1.5rem;
+              position: absolute;
+              top: 50%;
+              right: 1.5rem;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          @include mobile-sm {
+            display: none;
+          }
+        }
+        &--darkmode {
+          display: block;
+          padding: 0 2rem;
+          @include Text(2.5rem, "", $color-white);
+        }
+        &--menubar {
+          cursor: pointer;
+          @include Text(3rem, "", $color-white);
+        }
+      }
+    }
+  }
+
+  // banner-info
+  .banner__info {
+    margin-top: 10rem;
+    max-width: 600px;
+    text-align: left;
+
+    &--caption {
+      margin-bottom: 2.4rem;
+    }
+
+    &--desc {
+      padding-right: 4.8rem;
+
+      @include mobile-md {
+        padding-right: 0;
+      }
+    }
+
+    &--button {
+      margin-top: 4.8rem;
+      .btn-banner {
+        transition: all 0.5s;
+
+        i {
+          margin-left: 1rem;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: $color-primary;
+        }
+      }
+
+      @include mobile-sm {
+        margin-top: 2.4rem;
+      }
+    }
+
+    @include mobile-sm {
+      margin-top: 2rem;
+    }
+  }
+
+  @include mobile-md {
+    min-height: 600px;
+  }
+  @include mobile-sm {
+    min-height: 450px;
+  }
+}
+
+// banner-darkmode
+.banner-home-darkmode {
+  .header {
+    .navbar {
+      .navbar__right {
+        .navbar__right--search {
+          .search__input {
+            background-color: $bg-dark !important;
+          }
+          .form-control {
+            border: 1px solid $bg-dark !important;
+            &:focus {
+              color: $font-dark;
+              border-color: $bg-dark !important;
+              outline: none;
+              box-shadow: none !important;
+            }
+          }
+          a {
+            color: $font-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+// form :))
+.form-control {
+  border: 1px solid #fff !important;
+
+  &:focus {
+    color: #212529;
+    border-color: #fff !important;
+    outline: none;
+    box-shadow: none !important;
+  }
+}

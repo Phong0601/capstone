@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  @include desktop-xxl {
+    max-width: 1200px;
+  }
+}
